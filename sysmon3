@@ -3,7 +3,7 @@
 	<rules>
                 
 		
-	       <!-- Create remote thread https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
+	       <!-- Create remote thread sysmon 3 and 3.10 https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
                 <rule provider="DefensiveDepth" class='10777' id='10777'>
                         <patterns>
                                 <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::(@@NUMBER::):@): @ESTRING:::@ SYSTEM: NT AUTHORITY: @ESTRING:s0::@ @ESTRING:: SequenceNumber:@ @NUMBER::@ @ESTRING:: SourceProcessGuid:@ {@ESTRING:s1:}@ @ESTRING:: SourceImage: @@ESTRING:s2:  TargetProcessGuid: {@@ESTRING:s3:}@@ESTRING:: TargetImage: @@ESTRING:s4:  NewThreadId:@</pattern>
