@@ -56,4 +56,20 @@ INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES (
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_REMOTETHREAD"), (SELECT id FROM fields WHERE field="targetimage"), 15);
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_REMOTETHREAD"), (SELECT id FROM fields WHERE field="startmodule"), 16);
 
+/*  Creates SYSMON_IMAGE Class & associated fields */
+INSERT IGNORE INTO classes (id, class) VALUES (10782, "SYSMON_IMAGE");
+
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hostname","string", "QSTRING");  
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("processguid","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("image","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("imageloaded","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hash","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("signed","string", "QSTRING");
+
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="hostname"), 11);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="processguid"), 12);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="image"), 13);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="imageloaded"), 14);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="hash"), 15);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_IMAGE"), (SELECT id FROM fields WHERE field="signed"), 16);
 
