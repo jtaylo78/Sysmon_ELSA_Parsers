@@ -11,10 +11,9 @@
         <rules>
 
 
-               <!-- Create remote thread sysmon 4  https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
-                <rule provider="DefensiveDepth" class='10880' id='10880'>
+               <rule provider="DefensiveDepth" class='10782' id='10782'>
                         <patterns>
-                                <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: @@ESTRING:s0:: @@ESTRING::ProcessGuid: {@@ESTRING:s1:} @@ESTRING:: Image: @@ESTRING:s2: ImageLoaded: @@ESTRING:s3: @@ESTRING:: Hashes: @@ESTRING:s4: @@ESTRING:: Signed: @@ESTRING:s5: @</pattern>
+                                <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: @@ESTRING:s0:: @@ESTRING::ProcessGuid: {@@ESTRING:s1:} @@ESTRING:: Image: @@ESTRING:s2:  ImageLoaded: @@ESTRING:s3:  Hashes: @@ESTRING:s4: @@ESTRING:: Signed: @@ESTRING:s5: @</pattern>
                         </patterns>
 
                         <examples>
@@ -22,47 +21,21 @@
                                         <test_message program="ossec_archive">2016 Jul 26 03:30:18 (win8-test) 192.168.1.76->WinEvtLog 2016 Jul 26 20:14:35 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-VL5U1V07CA7: Image loaded:  UtcTime: 2016-07-27 02:14:34.620  ProcessGuid: {B8CD0A89-D195-5796-0000-0010DDF71B00}  ProcessId: 3520  Image: C:\Windows\Sysmon.exe  ImageLoaded: C:\Windows\System32\FWPUCLNT.DLL  Hashes: SHA1=26DE7E214FE056327469E86D5D38AC744FB353FA,IMPHASH=89B1C5BA3C0EC10428AC86A1628A90EF  Signed: true  Signature: Microsoft Windows</test_message>
                                                 <!-- host-->
                                                 <test_value name="s0">WIN-VL5U1V07CA7</test_value>
-                                                <!-- sourceprocessguid-->
+                                                <!-- processguid-->
                                                 <test_value name="s1">B8CD0A89-D195-5796-0000-0010DDF71B00</test_value>
-                                                <!-- sourceimage-->
+                                                <!-- image-->
                                                 <test_value name="s2">C:\Windows\Sysmon.exe</test_value>
-                                                <!-- targetProcessGuid-->
+                                                <!-- imageloaded-->
                                                 <test_value name="s3">C:\Windows\System32\FWPUCLNT.DLL</test_value>
-                                                <!-- targetimage-->
+                                                <!-- hashes-->
                                                 <test_value name="s4">SHA1=26DE7E214FE056327469E86D5D38AC744FB353FA,IMPHASH=89B1C5BA3C0EC10428AC86A1628A90EF</test_value>
-                                                <!-- targetimage-->
+                                                <!-- signed -->
                                                 <test_value name="s5">true</test_value>
 
                                 </example>
                         </examples>
                 </rule>
 
-
-
-                <rule provider="DefensiveDepth-SYSMON3" class='10881' id='10881'>
-                        <patterns>
-                                <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(1):@@ESTRING:::@@ESTRING:::@@ESTRING:::@ @ESTRING:s0::@@ESTRING::{@@ESTRING:s1:}@@ESTRING::Image: @@ESTRING:s2:  CommandLine: @@ESTRING::CurrentDirectory: @@ESTRING::User: @@ESTRING:s3:  LogonGuid:@@ESTRING::Hashes: @@ESTRING:s4: @@ESTRING::ParentImage: @@ESTRING:s5:  ParentCommandLine:@</pattern>
-                        </patterns>
-
-                        <examples>
-                                <example>
-                                        <test_message program="ossec_archive">2015 Jul 13 13:27:17 (windows7_x64) 192.168.142.6->WinEvtLog 2015 Jul 13 07:27:16 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(1): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-KTL39CHEPFC: Process Create:  SequenceNumber: 472  UtcTime: 7/13/2015 01:27:16.823 PM  ProcessGuid: {F17228B0-BCB4-55A3-0000-001024551800}  ProcessId: 2208  Image: C:\Windows\System32\notepad.exe  CommandLine: notepad  CurrentDirectory: C:\Users\tester\  User: WIN-KTL39CHEPFC\tester  LogonGuid: {F17228B0-B2C7-55A3-0000-0020E54F0700}  LogonId: 0x74fe5  TerminalSessionId: 1  IntegrityLevel: Medium  Hashes: SHA1=7EB0139D2175739B3CCB0D1110067820BE6ABD29  ParentProcessGuid: {F17228B0-BCB2-55A3-0000-001089501800}  ParentProcessId: 3004  ParentImage: C:\Windows\System32\cmd.exe  ParentCommandLine: "C:\Windows\system32\cmd.exe"</test_message>
-                                                <!-- host-->
-                                                <test_value name="s0">WIN-KTL39CHEPFC</test_value>
-                                                <!-- processguid-->
-                                                <test_value name="s1">F17228B0-BCB4-55A3-0000-001024551800</test_value>
-                                                <!-- image-->
-                                                <test_value name="s2">C:\Windows\System32\notepad.exe</test_value>
-                                                <!-- user-->
-                                                <test_value name="s3">WIN-KTL39CHEPFC\tester</test_value>
-                                                <!-- hash-->
-                                                <test_value name="s4">SHA1=7EB0139D2175739B3CCB0D1110067820BE6ABD29</test_value>
-                                                <!-- parentimage-->
-                                                <test_value name="s5">C:\Windows\System32\cmd.exe</test_value>
-
-                                </example>
-                        </examples>
-                </rule>
 
         </rules>
 </ruleset>
