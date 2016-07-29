@@ -11,7 +11,8 @@
         <rules>
 
 
-               <rule provider="DefensiveDepth" class='10782' id='10782'>
+               <!-- Create remote thread sysmon 4  https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
+                <rule provider="DefensiveDepth" class='10782' id='10782'>
                         <patterns>
                                 <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: @@ESTRING:s0:: @@ESTRING::ProcessGuid: {@@ESTRING:s1:} @@ESTRING:: Image: @@ESTRING:s2:  ImageLoaded: @@ESTRING:s3:  Hashes: @@ESTRING:s4: @@ESTRING:: Signed: @@ESTRING:s5: @</pattern>
                         </patterns>
@@ -31,6 +32,30 @@
                                                 <test_value name="s4">SHA1=26DE7E214FE056327469E86D5D38AC744FB353FA,IMPHASH=89B1C5BA3C0EC10428AC86A1628A90EF</test_value>
                                                 <!-- signed -->
                                                 <test_value name="s5">true</test_value>
+
+                                </example>
+                        </examples>
+                </rule>
+                 <rule provider="DefensiveDepth" class='10783' id='10783'>
+                        <patterns>
+                                <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(2): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: @@ESTRING:s0:: @@ESTRING::ProcessGuid: {@@ESTRING:s1:} @@ESTRING:: Image: @@ESTRING:s2:  TargetFilename: @@ESTRING:s3:  CreationUtcTime: @@ESTRING:s4:  PreviousCreationUtcTime: @@ESTRING:s5:@</pattern>
+                        </patterns>
+
+                        <examples>
+                                <example>
+                                        <test_message program="ossec_archive">2016 Jul 26 03:31:00 (win8-test) 192.168.1.76->WinEvtLog 2016 Jul 26 20:15:16 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(2): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-VL5U1V07CA7: File creation time changed:  UtcTime: 2016-07-27 02:15:16.727  ProcessGuid: {B8CD0A89-CDA9-5796-0000-001005E50500}  ProcessId: 3620  Image: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe  TargetFilename: C:\Users\james\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations\6R7AY6B552FSY7NMWD0S.temp  CreationUtcTime: 2016-05-10 13:30:19.910  PreviousCreationUtcTime: 2016-07-27 02:15:16.727</test_message>
+                                                <!-- host-->
+                                                <test_value name="s0">WIN-VL5U1V07CA7</test_value>
+                                                <!-- processguid-->
+                                                <test_value name="s1">B8CD0A89-CDA9-5796-0000-001005E50500</test_value>
+                                                <!-- image-->
+                                                <test_value name="s2">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</test_value>
+                                                <!-- targetfilename -->
+                                                <test_value name="s3">C:\Users\james\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations\6R7AY6B552FSY7NMWD0S.temp</test_value>
+                                                <!-- creationutctime-->
+                                                <test_value name="s4">2016-05-10 13:30:19.910</test_value>
+                                                <!-- previouscreationutctime -->
+                                                <test_value name="s5">2016-07-27 02:15:16.727</test_value>
 
                                 </example>
                         </examples>
