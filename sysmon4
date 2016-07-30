@@ -1,8 +1,4 @@
-#SYSMON4 Events
 
-2016 Jul 26 03:30:18 (win8-test) 192.168.1.76->WinEvtLog 2016 Jul 26 20:14:35 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-VL5U1V07CA7: Image loaded:  UtcTime: 2016-07-27 02:14:34.620  ProcessGuid: {B8CD0A89-D195-5796-0000-0010DDF71B00}  ProcessId: 3520  Image: C:\Windows\Sysmon.exe  ImageLoaded: C:\Windows\System32\FWPUCLNT.DLL  Hashes: SHA1=26DE7E214FE056327469E86D5D38AC744FB353FA,IMPHASH=89B1C5BA3C0EC10428AC86A1628A90EF  Signed: true  Signature: Microsoft Windows
-2016 Jul 26 03:31:00 (win8-test) 192.168.1.76->WinEvtLog 2016 Jul 26 20:15:16 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(2): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-VL5U1V07CA7: File creation time changed:  UtcTime: 2016-07-27 02:15:16.727  ProcessGuid: {B8CD0A89-CDA9-5796-0000-001005E50500}  ProcessId: 3620  Image: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe  TargetFilename: C:\Users\james\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations\6R7AY6B552FSY7NMWD0S.temp  CreationUtcTime: 2016-05-10 13:30:19.910  PreviousCreationUtcTime: 2016-07-27 02:15:16.727
-2016 Jul 26 03:32:14 (win8-test) 192.168.1.76->WinEvtLog 2016 Jul 26 20:16:31 WinEvtLog: Microsoft-Windows-Sysmon/Operational: INFORMATION(5): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: WIN-VL5U1V07CA7: Process terminated:  UtcTime: 2016-07-27 02:16:31.060  ProcessGuid: {B8CD0A89-D602-5796-0000-001087702400}  ProcessId: 3424  Image: C:\Windows\System32\taskhost.exe
 
 
  
