@@ -90,3 +90,34 @@ INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES (
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_FILECREATE"), (SELECT id FROM fields WHERE field="targetfilename"), 14);
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_FILECREATE"), (SELECT id FROM fields WHERE field="creationutc"), 15);
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_FILECREATE"), (SELECT id FROM fields WHERE field="previouscreationutc"), 16);
+
+
+
+/*  Creates SYSMON_IMAGE Class & associated fields */
+INSERT IGNORE INTO classes (id, class) VALUES (10785, "SYSMON_DRIVERLOADED");
+
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hostname","string", "QSTRING");  
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("imageloaded","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hash","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("signed","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("signature","string", "QSTRING");
+
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_DRIVERLOADED"), (SELECT id FROM fields WHERE field="hostname"), 11);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_DRIVERLOADED"), (SELECT id FROM fields WHERE field="imageloaded"), 12);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_DRIVERLOADED"), (SELECT id FROM fields WHERE field="hash"), 13);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_DRIVERLOADED"), (SELECT id FROM fields WHERE field="signed"), 14);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_DRIVERLOADED"), (SELECT id FROM fields WHERE field="signature"), 15);
+
+/*  Creates SYSMON_RAWACCESS Class & associated fields */
+INSERT IGNORE INTO classes (id, class) VALUES (10786, "SYSMON_RAWACCESS");
+
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hostname","string", "QSTRING");  
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("processguid","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("image","string", "QSTRING");
+INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("device","string", "QSTRING");
+
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="hostname"), 11);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="processguid"), 12);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="image"), 13);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="device"), 14);
+
