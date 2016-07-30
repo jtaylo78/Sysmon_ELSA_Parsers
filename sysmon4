@@ -7,7 +7,7 @@
         <rules>
 
 
-               <!-- Create remote thread sysmon 4  https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
+               <!--https://github.com/jtaylo78/Sysmon_ELSA_Parsers -->
                 <rule provider="DefensiveDepth" class='10782' id='10782'>
                         <patterns>
                                 <pattern>@NUMBER::@@ESTRING::(@@ESTRING::)@ @IPv4::@->WinEvtLog @ESTRING::Microsoft-Windows-Sysmon/Operational: INFORMATION(7): Microsoft-Windows-Sysmon: SYSTEM: NT AUTHORITY: @@ESTRING:s0:: @@ESTRING::ProcessGuid: {@@ESTRING:s1:} @@ESTRING:: Image: @@ESTRING:s2:  ImageLoaded: @@ESTRING:s3:  Hashes: @@ESTRING:s4: @@ESTRING:: Signed: @@ESTRING:s5: @</pattern>
