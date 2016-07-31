@@ -123,7 +123,7 @@ INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES (
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="device"), 14);
 
 /*  Creates SYSMON_PROCESS Class & associated fields */
-INSERT IGNORE INTO classes (id, class) VALUES (10787, "SYSMON_PROCESSACESS");
+INSERT IGNORE INTO classes (id, class) VALUES (10787, "SYSMON_PROCESSACCESS");
 
 INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hostname","string", "QSTRING");  
 INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("sourceprocessguid","string", "QSTRING");
@@ -132,9 +132,9 @@ INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("targetproce
 INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("targetimage","string", "QSTRING");
 
 
-INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACESS"), (SELECT id FROM fields WHERE field="hostname"), 11);
-INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACESS"), (SELECT id FROM fields WHERE field="sourceprocessguid"), 12);
-INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACESS"), (SELECT id FROM fields WHERE field="sourceimage"), 13);
-INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACESS"), (SELECT id FROM fields WHERE field="targetprocessguid"), 14);
-INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACESS"), (SELECT id FROM fields WHERE field="targetimage"), 15);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACCESS"), (SELECT id FROM fields WHERE field="hostname"), 11);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACCESS"), (SELECT id FROM fields WHERE field="sourceprocessguid"), 12);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACCESS"), (SELECT id FROM fields WHERE field="sourceimage"), 13);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACCESS"), (SELECT id FROM fields WHERE field="targetprocessguid"), 14);
+INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_PROCESSACCESS"), (SELECT id FROM fields WHERE field="targetimage"), 15);
 
