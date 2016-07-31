@@ -56,6 +56,7 @@ INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES (
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_REMOTETHREAD"), (SELECT id FROM fields WHERE field="targetimage"), 15);
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_REMOTETHREAD"), (SELECT id FROM fields WHERE field="startmodule"), 16);
 
+/* ---- NEW EVENTS TESTING 10782-10787 ----- */
 
 /*  Creates SYSMON_IMAGE Class & associated fields */
 INSERT IGNORE INTO classes (id, class) VALUES (10782, "SYSMON_IMAGE");
