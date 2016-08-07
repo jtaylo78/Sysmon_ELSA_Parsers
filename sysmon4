@@ -50,11 +50,7 @@
                                                 <test_value name="s2">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</test_value>
                                                 <!-- targetfilename -->
                                                 <test_value name="s3">C:\Users\james\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations\6R7AY6B552FSY7NMWD0S.temp</test_value>
-                                                <!-- creationutctime-->
-                                                <test_value name="s4">2016-05-10 13:30:19.910</test_value>
-                                                <!-- previouscreationutctime -->
-                                                <test_value name="s5">2016-07-27 02:15:16.727</test_value>
-
+                                                
                                 </example>
                         </examples>
                 </rule>
