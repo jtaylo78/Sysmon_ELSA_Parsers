@@ -120,7 +120,7 @@ INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES (
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="image"), 13);
 INSERT IGNORE INTO fields_classes_map (class_id, field_id, field_order) VALUES ((SELECT id FROM classes WHERE class="SYSMON_RAWACCESS"), (SELECT id FROM fields WHERE field="device"), 14);
 
-/*  Creates SYSMON_PROCESS Class & associated fields */
+/*  Creates SYSMON_PROCESSACCESS Class & associated fields */
 INSERT IGNORE INTO classes (id, class) VALUES (10787, "SYSMON_PROCESSACCESS");
 
 INSERT IGNORE INTO fields (field, field_type, pattern_type) VALUES ("hostname","string", "QSTRING");  
